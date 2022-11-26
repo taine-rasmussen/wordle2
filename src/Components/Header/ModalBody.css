@@ -1,0 +1,15 @@
+.modalbody-wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalbody-header {
+  display: flex;
+  flex-direction: row;
+}
+
+.modalbody-body{
+
+}
