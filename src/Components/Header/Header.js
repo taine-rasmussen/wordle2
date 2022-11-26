@@ -21,9 +21,25 @@ const Header = () => {
     <div className='header-wrapper'>
       <h3>Wordle</h3>
       <div className='header-cta-btns-wrapper'>
-        <AiOutlineInfoCircle />
+        <AiOutlineInfoCircle
+          onClick={openModal}
+        />
         <BsBarChart />
       </div>
+      <Modal
+        onClose={closeModal}
+        open={toggleModal}
+        style={{
+          position: 'absolute',
+          border: '2px solid #000',
+          backgroundColor: 'gray',
+          height: '60%',
+          width: '25%',
+          margin: 'auto'
+        }}
+      >
+        <h2>How are you?</h2>
+      </Modal>
     </div>
   )
 }
