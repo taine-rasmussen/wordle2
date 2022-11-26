@@ -1,0 +1,16 @@
+body {
+  background: #6878B8;
+  display: flex;
+  justify-content: center;
+}
+
+/* 
+Colours:
+- BG: #6878B8
+- Secondary: #E6ECF7 or #F4F7FB
+- Missing letter: #99A8C4
+- Found letter: #F0C845
+- Correct letter: #1cb18e
+- GameCell border & key bg: #D0D9E8
+- GameCell bg: #ffffff
+ */

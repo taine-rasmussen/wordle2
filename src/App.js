@@ -5,9 +5,10 @@ import Gameboard from './Components/Gameboard/Gameboard';
 import Keyboard from './Components/Keyboard/Keyboard';
 
 function App() {
+
   return (
     <div className="App">
-      <Header />
+      <Header/>
       <Gameboard />
       <Keyboard />
     </div>
