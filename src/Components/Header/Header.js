@@ -4,6 +4,7 @@ import Modal from '@material-ui/core/Modal';
 import { useState } from 'react';
 
 import './Header.css';
+import ModalBody from './ModalBody'
 
 const Header = () => {
 
@@ -17,6 +18,16 @@ const Header = () => {
     setToggleModal(false)
   };
 
+  const modalStyles = {
+    position: 'absolute',
+    border: '2px solid #000',
+    borderRadius: '20px',
+    backgroundColor: 'gray',
+    height: '60%',
+    width: '25%',
+    margin: 'auto'
+  }
+
   return (
     <div className='header-wrapper'>
       <h3>Wordle</h3>
@@ -29,16 +40,11 @@ const Header = () => {
       <Modal
         onClose={closeModal}
         open={toggleModal}
-        style={{
-          position: 'absolute',
-          border: '2px solid #000',
-          backgroundColor: 'gray',
-          height: '60%',
-          width: '25%',
-          margin: 'auto'
-        }}
+        style={modalStyles}
       >
-        <h2>How are you?</h2>
+        <ModalBody
+          closeModal={closeModal}
+        />
       </Modal>
     </div>
   )
