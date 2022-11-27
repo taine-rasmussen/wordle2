@@ -4,21 +4,30 @@ import Modal from '@material-ui/core/Modal';
 import { useState } from 'react';
 
 import './Header.css';
-import ModalBody from './ModalBody'
+import InfoModal from './Modals/InfoModal'
 
 const Header = () => {
 
-  const [toggleModal, setToggleModal] = useState(false);
+  const [toggleInfoModal, setToggleInfoModal] = useState(false);
+  const [toggleStatsModal, setToggleStatsModal] = useState(false);
 
-  const openModal = () => {
-    setToggleModal(true)
+  const openInfoModal = () => {
+    setToggleInfoModal(true)
   };
 
-  const closeModal = () => {
-    setToggleModal(false)
+  const closeInfoModal = () => {
+    setToggleInfoModal(false)
   };
 
-  const modalStyles = {
+  const openStatsModal = () => {
+    setToggleStatsModal(true)
+  };
+
+  const CloseStatsModal = () => {
+    setToggleStatsModal(false)
+  };
+
+  const infoModalStyles = {
     position: 'absolute',
     border: '2px solid #000',
     borderRadius: '20px',
@@ -33,17 +42,30 @@ const Header = () => {
       <h3>Wordle</h3>
       <div className='header-cta-btns-wrapper'>
         <AiOutlineInfoCircle
-          onClick={openModal}
+          onClick={openInfoModal}
         />
-        <BsBarChart />
+        <BsBarChart
+          onclick={openStatsModal}
+        />
       </div>
+
       <Modal
-        onClose={closeModal}
-        open={toggleModal}
-        style={modalStyles}
+        onClose={closeInfoModal}
+        open={toggleInfoModal}
+        style={infoModalStyles}
       >
-        <ModalBody
-          closeModal={closeModal}
+        <InfoModal
+          closeModal={closeInfoModal}
+        />
+      </Modal>
+
+      <Modal
+        onClose={closeInfoModal}
+        open={toggleStatsModal}
+        style={infoModalStyles}
+      >
+        <InfoModal
+          closeModal={closeInfoModal}
         />
       </Modal>
     </div>

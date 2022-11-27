@@ -2,7 +2,7 @@ import { AiOutlineCloseCircle } from 'react-icons/ai'
 
 import './ModalBody.css'
 
-const ModalBody = (props) => {
+const InfoModal = (props) => {
   const {
     closeModal
   } = props;
@@ -21,4 +21,4 @@ const ModalBody = (props) => {
   )
 }
 
-export default ModalBody
+export default InfoModal;
