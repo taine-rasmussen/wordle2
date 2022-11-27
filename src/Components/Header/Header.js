@@ -4,8 +4,6 @@ import Modal from '@material-ui/core/Modal';
 import { useState } from 'react';
 
 import './Header.css';
-import InfoModal from './Modals/InfoModal';
-import StatsModal from './Modals/StatsModal';
 
 const Header = () => {
 
@@ -32,7 +30,7 @@ const Header = () => {
     position: 'absolute',
     border: '2px solid #000',
     borderRadius: '20px',
-    backgroundColor: 'gray',
+    background: '#ffffff',
     height: '60%',
     width: '25%',
     margin: 'auto'
@@ -50,24 +48,20 @@ const Header = () => {
         />
       </div>
 
-      <Modal
+      {/* <Modal
         onClose={closeInfoModal}
         open={toggleInfoModal}
         style={infoModalStyles}
       >
-        <InfoModal
-          closeModal={closeInfoModal}
-        />
-      </Modal>
+        <InfoModal />
+      </Modal> */}
 
       <Modal
         onClose={CloseStatsModal}
         open={toggleStatsModal}
         style={infoModalStyles}
       >
-        <StatsModal
-          closeModal={CloseStatsModal}
-        />
+        <StatsModal />
       </Modal>
     </div>
   )
