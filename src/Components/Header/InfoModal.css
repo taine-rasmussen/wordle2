@@ -8,8 +8,15 @@
 .info-modalbody-header {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 80px;
 }
 
 .info-modalbody-body{
 
+}
+
+.exit-btn{
+  cursor: pointer;
 }

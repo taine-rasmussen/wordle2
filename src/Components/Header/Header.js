@@ -1,9 +1,11 @@
-import { AiOutlineInfoCircle } from 'react-icons/ai';
+import { AiOutlineInfoCircle, AiOutlineCloseCircle } from 'react-icons/ai';
 import { BsBarChart } from 'react-icons/bs';
 import Modal from '@material-ui/core/Modal';
 import { useState } from 'react';
 
 import './Header.css';
+import './InfoModal.css';
+import './StatsModal.css';
 
 const Header = () => {
 
@@ -26,11 +28,10 @@ const Header = () => {
     setToggleStatsModal(false)
   };
 
-  const infoModalStyles = {
+  const defaultModalStyles = {
     position: 'absolute',
-    border: '2px solid #000',
-    borderRadius: '20px',
-    background: '#ffffff',
+    borderRadius: '15px',
+    background: 'white',
     height: '60%',
     width: '25%',
     margin: 'auto'
@@ -48,20 +49,38 @@ const Header = () => {
         />
       </div>
 
-      {/* <Modal
+      <Modal
         onClose={closeInfoModal}
         open={toggleInfoModal}
-        style={infoModalStyles}
+        style={defaultModalStyles}
       >
-        <InfoModal />
-      </Modal> */}
+        <div className='info-modalbody-wrapper'>
+          <div className='info-modalbody-header'>
+            <h3>How to play?</h3>
+            <AiOutlineCloseCircle 
+              onClick={closeInfoModal}
+              className='exit-btn'
+            />
+          </div>
+          <div className='info-modalbody-body'>
+            Body goes here
+          </div>
+        </div>
+      </Modal>
 
       <Modal
         onClose={CloseStatsModal}
         open={toggleStatsModal}
-        style={infoModalStyles}
+        style={defaultModalStyles}
       >
-        <StatsModal />
+        <div className='stats-modalbody-wrapper'>
+          <div className='stats-modalbody-header'>
+            Stats modal
+          </div>
+          <div className='stats-modalbody-body'>
+            Body goes here
+          </div>
+        </div>
       </Modal>
     </div>
   )
