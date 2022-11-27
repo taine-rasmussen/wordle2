@@ -4,7 +4,8 @@ import Modal from '@material-ui/core/Modal';
 import { useState } from 'react';
 
 import './Header.css';
-import InfoModal from './Modals/InfoModal'
+import InfoModal from './Modals/InfoModal';
+import StatsModal from './Modals/StatsModal';
 
 const Header = () => {
 
@@ -45,7 +46,7 @@ const Header = () => {
           onClick={openInfoModal}
         />
         <BsBarChart
-          onclick={openStatsModal}
+          onClick={openStatsModal}
         />
       </div>
 
@@ -60,12 +61,12 @@ const Header = () => {
       </Modal>
 
       <Modal
-        onClose={closeInfoModal}
+        onClose={CloseStatsModal}
         open={toggleStatsModal}
         style={infoModalStyles}
       >
-        <InfoModal
-          closeModal={closeInfoModal}
+        <StatsModal
+          closeModal={CloseStatsModal}
         />
       </Modal>
     </div>

@@ -1,20 +1,20 @@
 import { AiOutlineCloseCircle } from 'react-icons/ai'
 
-import './ModalBody.css'
+import './InfoModal.css'
 
 const InfoModal = (props) => {
   const {
-    closeModal
+    closeInfoModal
   } = props;
 
   return (
-    <div className='modalbody-wrapper'>
-      <div className='modalbody-header'>
+    <div className='info-modalbody-wrapper'>
+      <div className='info-modalbody-header'>
         <AiOutlineCloseCircle
-          onClick={closeModal}
+          onClick={closeInfoModal}
         />
       </div>
-      <div className='modalbody-body'>
+      <div className='info-modalbody-body'>
         Body goes here
       </div>
     </div>
