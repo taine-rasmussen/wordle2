@@ -4,6 +4,8 @@ import { useState } from 'react';
 
 import './Header.css';
 import InfoModal from './Modals/InfoModal'
+import StatsModal from './Modals/StatsModal'
+
 
 const Header = () => {
 
@@ -16,10 +18,6 @@ const Header = () => {
 
   const openStatsModal = () => {
     setToggleStatsModal(true)
-  };
-
-  const CloseStatsModal = () => {
-    setToggleStatsModal(false)
   };
 
   return (
@@ -37,6 +35,10 @@ const Header = () => {
       <InfoModal
         toggleInfoModal={toggleInfoModal}
         setToggleInfoModal={setToggleInfoModal}
+      />
+      <StatsModal
+        toggleStatsModal={toggleStatsModal}
+        setToggleStatsModal={setToggleStatsModal}
       />
     </div>
   )

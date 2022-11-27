@@ -1,7 +1,7 @@
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 import Modal from '@material-ui/core/Modal';
 
-import './InfoModal.css';
+import './StatsModal.css';
 
 const defaultModalStyles = {
   position: 'absolute',
@@ -12,27 +12,27 @@ const defaultModalStyles = {
   margin: 'auto'
 }
 
-const InfoModal = (props) => {
+const StatsModal = (props) => {
   const {
-    setToggleInfoModal,
-    toggleInfoModal
+    setToggleStatsModal,
+    toggleStatsModal
   } = props;
 
-  const closeInfoModal = () => {
-    setToggleInfoModal(false)
+  const closeStatsModal = () => {
+    setToggleStatsModal(false)
   };
 
   return (
     <Modal
-      onClose={closeInfoModal}
-      open={toggleInfoModal}
+      onClose={closeStatsModal}
+      open={toggleStatsModal}
       style={defaultModalStyles}
     >
       <div className='info-modalbody-wrapper'>
         <div className='info-modalbody-header'>
-          <h3>How to play?</h3>
+          <h3>Stats coming soon</h3>
           <AiOutlineCloseCircle
-            onClick={closeInfoModal}
+            onClick={closeStatsModal}
             className='exit-btn'
           />
         </div>
@@ -44,4 +44,4 @@ const InfoModal = (props) => {
   )
 }
 
-export default InfoModal;
+export default StatsModal;
