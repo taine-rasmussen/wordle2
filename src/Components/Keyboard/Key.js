@@ -1,3 +1,5 @@
+import { useCallback } from 'react'
+
 import './Keyboard.css'
 import useKeyboard from '../../Hooks/useKeyboard'
 import useGameboardRows from '../../Hooks/useGameboardRows'
@@ -18,14 +20,15 @@ const Key = (props) => {
 
   const {
     updateGameboard,
-    handleGameBoardBackspace
+    handleGameBoardBackspace,
+    gameboardRows
   } = useGameboardRows();
 
   const {
     currentGameInfo,
-    setCurrentGameInfo,
+    updateCurrentGameInfo,
     handleBackSpace
-  } = useGameInfo()
+  } = useGameInfo(gameboardRows)
 
   const {
     currentRow,
@@ -35,16 +38,16 @@ const Key = (props) => {
   const handleDelete = () => {
     handleBackSpace()
     handleGameBoardBackspace()
-    console.log(currentGameInfo)
   }
 
-  const handleClick = (tile) => {
+  const handleClick = () => {
     if (key == 'DEL') return handleDelete();
     if (key == 'ENTER' && currentTile == 5) {
       return console.log('submit')
     } else if (key == 'ENTER') return;
-
-    updateGameboard (tile)
+    
+    updateGameboard(tile)
+    updateCurrentGameInfo()
   };
 
   return (
