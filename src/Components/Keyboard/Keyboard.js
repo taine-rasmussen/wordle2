@@ -1,5 +1,6 @@
 import './Keyboard.css'
 import useKeyboard from '../../Hooks/useKeyboard'
+import Key from './Key'
 
 const Keyboard = () => {
 
@@ -10,14 +11,12 @@ const Keyboard = () => {
 
   return (
     <div className='keyboard-container'>
-      {keys.map((key, i) => {
+      {keys.map((key) => {
         return(
-          <button
-            onClick={() => updateKey(key)}
+          <Key 
+            tile={key}
             key={key.key}
-          >
-            {key.key}
-          </button>
+          />
         )
       })}
     </div>
