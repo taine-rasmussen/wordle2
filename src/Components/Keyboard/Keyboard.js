@@ -5,20 +5,21 @@ const Keyboard = () => {
 
   const {
     keys,
-    updateKey,
-    resetKeyboard
+    updateKey
   } = useKeyboard();
 
   return (
     <div className='keyboard-container'>
       {keys.map((key, i) => {
         return(
-          <button>
+          <button
+            onClick={() => updateKey(key)}
+            key={key.key}
+          >
             {key.key}
           </button>
         )
       })}
-
     </div>
   )
 }

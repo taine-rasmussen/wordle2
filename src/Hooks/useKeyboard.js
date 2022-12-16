@@ -36,7 +36,7 @@ const useKeyboard = () => {
   const [keys, setKeys] = useState(INITIAL_KEY_STATE)
 
   const updateKey = (key) => {
-    console.log(key)
+    console.log(key.key)
   };
 
   const resetKeyboard = () => {
