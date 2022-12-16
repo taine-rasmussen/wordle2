@@ -36,7 +36,10 @@ const useKeyboard = () => {
   const [keys, setKeys] = useState(INITIAL_KEY_STATE)
 
   const updateKey = (tile) => {
-    console.log(tile)
+    const {
+      key,
+      match
+    } = tile
   };
 
   const resetKeyboard = () => {

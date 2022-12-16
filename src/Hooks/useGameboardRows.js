@@ -46,7 +46,19 @@ const useGameboardRows = () => {
   };
 
   const updateGameboard = (tile) => {
-    console.log(tile)
+    const {
+      key,
+      match
+    } = tile;
+
+    if(key == 'ENTER') return;
+    if (key == 'DEL') return;
+
+    
+
+
+
+    console.log(key)
   };
 
   return{

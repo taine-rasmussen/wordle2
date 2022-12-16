@@ -2,9 +2,8 @@ import { useEffect } from 'react'
 import useGameboardRows from '../../Hooks/useGameboardRows'
 import './Tiles.css'
 
-
 const Tiles = () => {
-  
+
   const {
     gameboardRows,
     resetGameboard
