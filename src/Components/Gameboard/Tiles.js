@@ -1,4 +1,4 @@
-import React from 'react'
+import { useEffect } from 'react'
 import useGameboardRows from '../../Hooks/useGameboardRows'
 import './Tiles.css'
 
@@ -6,7 +6,8 @@ import './Tiles.css'
 const Tiles = () => {
 
   const {
-    gameboardRows
+    gameboardRows,
+    resetGameboard
   } = useGameboardRows()
 
 return(
@@ -23,7 +24,7 @@ return(
                 className='tile-cell'
                 key={j}
               >
-               x 
+               {tile.key} 
               </div>
             )
           })} 
