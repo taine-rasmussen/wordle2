@@ -9,7 +9,6 @@ const Key = (props) => {
     },
   } = props
 
-
   const {
     updateKey
   } = useKeyboard();

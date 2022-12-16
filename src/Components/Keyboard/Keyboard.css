@@ -9,13 +9,13 @@
   height: 58px;
   border-radius: 4px;
   border: none;
-  background-color: #3a3a3c;
+  background-color: #bfc2ca;
   margin: 4px;
 }
 
 .keyboard-container button:hover {
   transform: scale(1.1);
-  color: #000;
+  background-color: #dbe0e9;
   cursor: pointer;
 }
 

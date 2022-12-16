@@ -19,11 +19,11 @@
 .tile-cell{
   width: 60px;
   min-height: 60px;
-  border: 2px solid #000;
+  border: 2px solid #D0D9E8;
   border-radius: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 3rem;
-  background: #fff;
+  background: #D0D9E8;
 }
