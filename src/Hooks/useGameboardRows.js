@@ -41,13 +41,18 @@ const useGameboardRows = () => {
 
   const [gameboardRows, setGameboardRows] = useState(INITIAL_GAME_STATE)
 
-    const resetGameboard = () => {
-      return setGameboardRows(INITIAL_GAME_STATE)
-    };
+  const resetGameboard = () => {
+    return setGameboardRows(INITIAL_GAME_STATE)
+  };
+
+  const updateGameboard = (tile) => {
+    console.log(tile)
+  };
 
   return{
     gameboardRows,
     resetGameboard,
+    updateGameboard
   };
 };
 
