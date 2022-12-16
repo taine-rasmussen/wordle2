@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import useGameInfo from './useGameboardRows'
 
 const INITIAL_KEY_STATE = [
   { key: 'Q', match: '' },
@@ -45,6 +46,8 @@ const useKeyboard = () => {
   const resetKeyboard = () => {
     return setKeys(INITIAL_KEY_STATE)
   }
+
+
 
   return{
     keys,

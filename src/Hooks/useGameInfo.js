@@ -12,11 +12,17 @@ const useGameInfo = () => {
     return setWinState(prevWinState => prevWinState)
   }
 
+  const handleBackSpace = () => {
+    if (currentGameInfo.currentTile == 0) return;
+    return currentGameInfo.currentTile = currentGameInfo.currentTile - 1
+  };
+
   return{
     winState,
     updateWinState,
     currentGameInfo,
-    setCurrentGameInfo
+    setCurrentGameInfo,
+    handleBackSpace
   }
 }
 

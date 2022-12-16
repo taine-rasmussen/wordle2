@@ -17,16 +17,33 @@ const Key = (props) => {
   } = useKeyboard();
 
   const {
-    updateGameboard
+    updateGameboard,
+    handleGameBoardBackspace
   } = useGameboardRows();
 
   const {
     currentGameInfo,
-    setCurrentGameInfo
+    setCurrentGameInfo,
+    handleBackSpace
   } = useGameInfo()
 
+  const {
+    currentRow,
+    currentTile
+  } = currentGameInfo
+
+  const handleDelete = () => {
+    handleBackSpace()
+    handleGameBoardBackspace()
+    console.log(currentGameInfo)
+  }
+
   const handleClick = (tile) => {
-    updateKey(tile)
+    if (key == 'DEL') return handleDelete();
+    if (key == 'ENTER' && currentTile == 5) {
+      return console.log('submit')
+    } else if (key == 'ENTER') return;
+
     updateGameboard (tile)
   };
 
