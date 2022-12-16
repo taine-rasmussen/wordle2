@@ -1,7 +1,24 @@
+import './Keyboard.css'
+import useKeyboard from '../../Hooks/useKeyboard'
+
 const Keyboard = () => {
+
+  const {
+    keys,
+    updateKey,
+    resetKeyboard
+  } = useKeyboard();
+
   return (
-    <div>
-      Keyboard
+    <div className='keyboard-container'>
+      {keys.map((key, i) => {
+        return(
+          <button>
+            {key.key}
+          </button>
+        )
+      })}
+
     </div>
   )
 }
