@@ -1,9 +1,28 @@
 .tiles-container{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column  ;
+  flex-wrap: wrap;
 }
 
-.tiles-cell{
-  width: 20%;
-  height: 15%;
+.row-container{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  padding: 5px 0px
+}
+
+.tile-cell{
+  width: 60px;
+  min-height: 60px;
   border: 2px solid #000;
   border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
 }

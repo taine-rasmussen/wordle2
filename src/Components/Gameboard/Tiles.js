@@ -13,13 +13,17 @@ return(
   <div className='tiles-container'>
     {gameboardRows.map((row, i) => {
       return(
-        <div className='row-index'>
+        <div 
+          className='row-container'
+          key={i}
+        >
           {row.map((tile, j) => {
             return(
               <div
                 className='tile-cell'
+                key={j}
               >
-                x
+               x 
               </div>
             )
           })} 
