@@ -1,4 +1,7 @@
 .tiles-container{
+}
+
+.tiles-cell{
   width: 20%;
   height: 15%;
   border: 2px solid #000;
