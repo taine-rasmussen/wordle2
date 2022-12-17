@@ -8,7 +8,8 @@ const Keyboard = (props) => {
   const {
     gameboardRows,
     updateGameboard,
-    handleGameBoardBackspace
+    handleGameBoardBackspace,
+    wordle
   } = props
 
   const {
@@ -27,10 +28,14 @@ const Keyboard = (props) => {
     handleGameBoardBackspace()
   }
 
-  const handleSubmit = () => {
-    console.log('submit func!')
+  const handleSubmit = (submittedRow) => {
+    const submittedWord = Object.keys(submittedRow).map(i => submittedRow[i]['key'])
+    
+    console.log(submittedWord, wordle)
+    
     return currentGameInfo.currentRow++, currentGameInfo.currentTile = 0
   }
+
 
   const handleClick = (tile) => {
     const {
@@ -39,7 +44,7 @@ const Keyboard = (props) => {
 
     if (key == 'DEL') return handleDelete(currentGameInfo);
     if (key == 'ENTER' && currentGameInfo.currentTile == 5) {
-      return handleSubmit()
+      return handleSubmit(gameboardRows[currentGameInfo.currentRow])
     } else if (key == 'ENTER') return;
     if(currentGameInfo.currentTile == 5) return;
 

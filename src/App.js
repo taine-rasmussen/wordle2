@@ -28,8 +28,6 @@ function App() {
     []
   );
 
-  console.log(wordle)
-
   return (
     <div className="App">
       {winState ? 
@@ -46,6 +44,7 @@ function App() {
               gameboardRows={gameboardRows}
               updateGameboard={updateGameboard}
               handleGameBoardBackspace={handleGameBoardBackspace}
+              wordle={wordle}
             />
           </>
         )
