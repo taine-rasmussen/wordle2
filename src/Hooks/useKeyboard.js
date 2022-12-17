@@ -47,8 +47,6 @@ const useKeyboard = () => {
     return setKeys(INITIAL_KEY_STATE)
   }
 
-
-
   return{
     keys,
     updateKey,
