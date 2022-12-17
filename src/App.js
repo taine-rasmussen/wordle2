@@ -18,7 +18,9 @@ function App() {
 
   const {
     gameboardRows,
-    updateGameboard,
+    updateGameboardKeys,
+    updateGameboardMatch,
+    setGameboardRows,
     handleGameBoardBackspace,
   } = useGameboardRows();
 
@@ -44,11 +46,13 @@ function App() {
               gameboardRows={gameboardRows}
             />
             <Keyboard 
-              gameboardRows={gameboardRows}
-              updateGameboard={updateGameboard}
-              handleGameBoardBackspace={handleGameBoardBackspace}
               wordle={wordle}
+              gameboardRows={gameboardRows}
               updateWinState={updateWinState}
+              setGameboardRows={setGameboardRows}
+              updateGameboardKeys={updateGameboardKeys}
+              updateGameboardMatch={updateGameboardMatch}
+              handleGameBoardBackspace={handleGameBoardBackspace}
             />
           </>
         )

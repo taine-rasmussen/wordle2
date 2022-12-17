@@ -9,7 +9,9 @@ const Keyboard = (props) => {
     wordle,
     gameboardRows,
     updateWinState,
-    updateGameboard,
+    setGameboardRows,
+    updateGameboardKeys,
+    updateGameboardMatch,
     handleGameBoardBackspace,
   } = props
 
@@ -33,8 +35,20 @@ const Keyboard = (props) => {
     const submittedWord = Object.keys(submittedRow).map(i => submittedRow[i]['key'])
     if(JSON.stringify(submittedWord) === JSON.stringify(wordle)) return updateWinState(true);
 
-    
-    console.log(submittedWord == wordle)
+    wordle.map((letter, i) => {
+      submittedWord.map((subLetter, j) => {
+        if(letter == subLetter && i == j){
+          // console.log(letter, subLetter, gameboardRows[currentGameInfo.currentRow][i].match)
+          return setGameboardRows([...gameboardRows], gameboardRows[currentGameInfo.currentRow][i].match = 'exact')
+        } else if (letter == subLetter) {
+          return setGameboardRows([...gameboardRows], gameboardRows[currentGameInfo.currentRow][i].match = 'found')
+        } else {
+          return setGameboardRows([...gameboardRows], gameboardRows[currentGameInfo.currentRow][i].match = 'nothing')
+        }
+      })
+    })
+
+    console.log(gameboardRows)
     
     return currentGameInfo.currentRow++, currentGameInfo.currentTile = 0
   }
@@ -51,7 +65,7 @@ const Keyboard = (props) => {
     } else if (key == 'ENTER') return;
     if(currentGameInfo.currentTile == 5) return;
 
-    updateGameboard(tile, currentGameInfo)
+    updateGameboardKeys(tile, currentGameInfo)
     updateCurrentGameInfo()
   };
 
