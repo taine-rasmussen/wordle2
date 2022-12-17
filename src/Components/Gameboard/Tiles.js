@@ -1,13 +1,9 @@
-import { useEffect } from 'react'
-import useGameboardRows from '../../Hooks/useGameboardRows'
 import './Tiles.css'
 
-const Tiles = () => {
-
+const Tiles = (props) => {
   const {
-    gameboardRows,
-    resetGameboard
-  } = useGameboardRows();
+    gameboardRows
+  } = props
 
   return(
     <div className='tiles-container'>

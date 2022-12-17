@@ -1,22 +1,20 @@
 import './Keyboard.css'
 import useKeyboard from '../../Hooks/useKeyboard'
-import useGameboardRows from '../../Hooks/useGameboardRows'
 import useGameInfo from '../../Hooks/useGameInfo'
 
 import Key from './Key'
 
-const Keyboard = () => {
+const Keyboard = (props) => {
+  const {
+    gameboardRows,
+    updateGameboard,
+    handleGameBoardBackspace
+  } = props
 
   const {
     keys,
     updateKey
   } = useKeyboard();
-
-  const {
-    updateGameboard,
-    handleGameBoardBackspace,
-    gameboardRows
-  } = useGameboardRows();
 
   const {
     currentGameInfo,
@@ -39,14 +37,15 @@ const Keyboard = () => {
       key,
       match
     } = tile
-    
-    if (key == 'DEL') return handleDelete();
+
+    if (key == 'DEL') return handleDelete(currentGameInfo);
     if (key == 'ENTER' && currentTile == 5) {
       return console.log('submit')
     } else if (key == 'ENTER') return;
 
-    updateGameboard(tile)
+    updateGameboard(tile, currentGameInfo)
     updateCurrentGameInfo()
+    console.log(gameboardRows)
   };
 
   return (

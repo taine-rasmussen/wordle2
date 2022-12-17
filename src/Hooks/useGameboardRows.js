@@ -1,5 +1,4 @@
 import { useState, useCallback } from 'react'
-import useGameInfo from './useGameInfo'
 
 
 const INITIAL_GAME_STATE = [
@@ -43,21 +42,15 @@ const useGameboardRows = () => {
 
   const [gameboardRows, setGameboardRows] = useState(INITIAL_GAME_STATE)
 
-  const {
-    currentGameInfo,
-    setCurrentGameInfo,
-    handleBackSpace
-  } = useGameInfo()
-
   const resetGameboard = () => {
     return setGameboardRows(INITIAL_GAME_STATE)
   };
 
-  const handleGameBoardBackspace = () => {
+  const handleGameBoardBackspace = (currentGameInfo) => {
     return setGameboardRows([...gameboardRows], gameboardRows[currentGameInfo.currentRow][currentGameInfo.currentTile].key = '')
   }
 
-  const updateGameboard = (tile) => {
+  const updateGameboard = (tile, currentGameInfo) => {
     const {
       key,
       match

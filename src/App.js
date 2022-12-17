@@ -1,5 +1,6 @@
 import './App.css';
 import useGameInfo from './Hooks/useGameInfo'
+import useGameboardRows from './Hooks/useGameboardRows'
 
 import Header from './Components/Header/Header';
 import Gameboard from './Components/Gameboard/Gameboard';
@@ -11,6 +12,12 @@ function App() {
     winState
   } = useGameInfo()
 
+  const {
+    gameboardRows,
+    updateGameboard,
+    handleGameBoardBackspace,
+  } = useGameboardRows();
+
   return (
     <div className="App">
       {winState ? 
@@ -20,8 +27,14 @@ function App() {
         (
           <>
             <Header/>
-            <Gameboard />
-            <Keyboard />
+            <Gameboard 
+              gameboardRows={gameboardRows}
+            />
+            <Keyboard 
+              gameboardRows={gameboardRows}
+              updateGameboard={updateGameboard}
+              handleGameBoardBackspace={handleGameBoardBackspace}
+            />
           </>
         )
       }

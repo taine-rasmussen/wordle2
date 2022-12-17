@@ -1,11 +1,16 @@
 import Tiles from './Tiles'
 import './Gameboard.css'
 
-const Gameboard = () => {
+const Gameboard = (props) => {
+  const {
+    gameboardRows
+  } = props
 
   return (
     <div className='gameboard-container'>
-      <Tiles />
+      <Tiles
+        gameboardRows={gameboardRows}
+      />
     </div>
   )
 }

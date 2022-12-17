@@ -19,7 +19,6 @@ const useGameInfo = (gameboardRows) => {
 
   const updateCurrentGameInfo = useCallback(
     () => {
-      console.log(gameboardRows[0], currentGameInfo)
       if (currentGameInfo.currentTile == 5 && currentGameInfo.currentRow != 5){
         return currentGameInfo.currentRow++, currentGameInfo.currentTile = 0
       } else {
