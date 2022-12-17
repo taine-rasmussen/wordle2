@@ -6,10 +6,11 @@ import Key from './Key'
 
 const Keyboard = (props) => {
   const {
+    wordle,
     gameboardRows,
+    updateWinState,
     updateGameboard,
     handleGameBoardBackspace,
-    wordle
   } = props
 
   const {
@@ -30,10 +31,10 @@ const Keyboard = (props) => {
 
   const handleSubmit = (submittedRow) => {
     const submittedWord = Object.keys(submittedRow).map(i => submittedRow[i]['key'])
+    if(JSON.stringify(submittedWord) === JSON.stringify(wordle)) return updateWinState(true);
 
-    if (submittedWord == wordle) return console.log('WIN!')
     
-    console.log(submittedWord, wordle)
+    console.log(submittedWord == wordle)
     
     return currentGameInfo.currentRow++, currentGameInfo.currentTile = 0
   }

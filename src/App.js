@@ -12,7 +12,8 @@ function App() {
   const {
     wordle,
     winState,
-    getRandomWord
+    getRandomWord,
+    updateWinState
   } = useGameInfo()
 
   const {
@@ -29,7 +30,7 @@ function App() {
   );
 
   console.log(wordle)
-  
+
   return (
     <div className="App">
       {winState ? 
@@ -47,6 +48,7 @@ function App() {
               updateGameboard={updateGameboard}
               handleGameBoardBackspace={handleGameBoardBackspace}
               wordle={wordle}
+              updateWinState={updateWinState}
             />
           </>
         )

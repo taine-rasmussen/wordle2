@@ -14,8 +14,8 @@ const useGameInfo = (gameboardRows) => {
     setWordle(words[Math.floor(Math.random() * words.length - 1)].toUpperCase().split(''))
   }
 
-  const updateWinState = () => {
-    return setWinState(prevWinState => prevWinState)
+  const updateWinState = (bool) => {
+    return setWinState(bool)
   }
 
   const handleBackSpace = () => {
