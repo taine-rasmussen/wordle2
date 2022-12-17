@@ -30,6 +30,20 @@
   cursor: pointer;
 }
 
+.keyboard-container .ENTER:active {
+  transform: scale(0.95);
+  transition: 0.2s;
+  color: #1CB18E;
+  cursor: pointer;
+}
+
+.keyboard-container .DEL:active {
+  transform: scale(0.95);
+  transition: 0.2s;
+  color: red;
+  cursor: pointer;
+}
+
 .keyboard-container button:nth-child(11) {
   margin-left: 30px;
 }

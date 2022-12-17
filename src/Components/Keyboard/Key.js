@@ -54,6 +54,7 @@ const Key = (props) => {
     <button
       key={key}
       onClick={() => handleClick(tile)}
+      className={key}
     >
       {key}
     </button>
