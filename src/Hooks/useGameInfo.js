@@ -11,7 +11,7 @@ const useGameInfo = (gameboardRows) => {
   })
 
   const getRandomWord = () => {
-    setWordle(words[Math.floor(Math.random() * words.length -1)])
+    setWordle(words[Math.floor(Math.random() * words.length -1)].split(''))
   }
 
   const updateWinState = () => {
