@@ -27,11 +27,7 @@ const useGameInfo = (gameboardRows) => {
       }
     },
     [gameboardRows, currentGameInfo]
-  )
-
-    // rendering issue
-    // function is called and works correctly first time
-    // Issue with my rendering is the functions called again and reset to 0
+  );
 
   return{
     winState,

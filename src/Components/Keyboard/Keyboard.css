@@ -16,8 +16,7 @@
 }
 
 .keyboard-container button:hover {
-  transform: scale(1.05);
-  box-shadow: 0px 0px 4px #6878B8;
+  box-shadow: 0px 0px 6px #6878B8;
   background-color: #dbe0e9;
   transition: 0.2s;
   cursor: pointer;
