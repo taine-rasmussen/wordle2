@@ -22,11 +22,6 @@ const Keyboard = (props) => {
     handleBackSpace
   } = useGameInfo(gameboardRows)
 
-  const {
-    currentRow,
-    currentTile
-  } = currentGameInfo
-
   const handleDelete = () => {
     handleBackSpace()
     handleGameBoardBackspace()

@@ -1,12 +1,18 @@
 import { useState, useCallback } from 'react'
+import words from '../WordList'
 
 const useGameInfo = (gameboardRows) => {
 
   const [winState, setWinState] = useState(false)
+  const [wordle, setWordle] = useState()
   const [currentGameInfo, setCurrentGameInfo] = useState({
     currentRow: 0,
     currentTile: 0
   })
+
+  const getRandomWord = () => {
+    setWordle(words[Math.floor(Math.random() * words.length -1)])
+  }
 
   const updateWinState = () => {
     return setWinState(prevWinState => prevWinState)
@@ -33,7 +39,9 @@ const useGameInfo = (gameboardRows) => {
     updateWinState,
     currentGameInfo,
     updateCurrentGameInfo,
-    handleBackSpace
+    handleBackSpace,
+    getRandomWord,
+    wordle
   }
 }
 

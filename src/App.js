@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import './App.css';
 import useGameInfo from './Hooks/useGameInfo'
 import useGameboardRows from './Hooks/useGameboardRows'
@@ -9,7 +10,9 @@ import Keyboard from './Components/Keyboard/Keyboard';
 function App() {
 
   const {
-    winState
+    wordle,
+    winState,
+    getRandomWord
   } = useGameInfo()
 
   const {
@@ -17,6 +20,15 @@ function App() {
     updateGameboard,
     handleGameBoardBackspace,
   } = useGameboardRows();
+
+  useEffect(
+    () => {
+      return getRandomWord()
+    },
+    []
+  );
+
+  console.log(wordle)
 
   return (
     <div className="App">
