@@ -1,5 +1,6 @@
 import { AiOutlineInfoCircle, AiOutlineCloseCircle } from 'react-icons/ai';
 import { BsBarChart } from 'react-icons/bs';
+import { SiWritedotas } from 'react-icons/si'
 import { useState } from 'react';
 
 import './Header.css';
@@ -22,6 +23,7 @@ const Header = () => {
 
   return (
     <div className='header-wrapper'>
+      {/* <SiWritedotas /> */}
       <h3>Wordle</h3>
       <div className='header-cta-btns-wrapper'>
         <AiOutlineInfoCircle
