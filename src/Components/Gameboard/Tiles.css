@@ -19,11 +19,38 @@
 .tile-cell{
   width: 60px;
   min-height: 60px;
-  border: 1px solid #6878B8;
+  border: 1.5px solid #6878B8;
   border-radius: 3px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 3rem;
+  font-size: 2rem;
+  font-weight: bold;
   background: #ffffff;
+}
+
+.tile-cell-filled{
+  border: 1.5px solid #000;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
+  background: #ffffff;
+  width: 60px;
+  min-height: 60px;
+  animation: letter 0.5s ease-in-out;
+}
+
+@keyframes letter {
+    0% {
+        transform: scale(1);
+    }
+    50%{
+      transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
 }

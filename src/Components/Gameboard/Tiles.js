@@ -16,7 +16,7 @@ const Tiles = (props) => {
             {row.map((tile, j) => {
               return(
                 <div
-                  className='tile-cell'
+                  className={tile.key ? 'tile-cell-filled' : 'tile-cell'}
                   key={j}
                 >
                 {tile.key} 
