@@ -28,6 +28,8 @@ function App() {
     []
   );
 
+  console.log(wordle)
+  
   return (
     <div className="App">
       {winState ? 

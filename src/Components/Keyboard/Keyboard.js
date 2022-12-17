@@ -30,6 +30,8 @@ const Keyboard = (props) => {
 
   const handleSubmit = (submittedRow) => {
     const submittedWord = Object.keys(submittedRow).map(i => submittedRow[i]['key'])
+
+    if (submittedWord == wordle) return console.log('WIN!')
     
     console.log(submittedWord, wordle)
     
