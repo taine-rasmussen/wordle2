@@ -32,20 +32,24 @@ const Keyboard = (props) => {
     handleGameBoardBackspace()
   }
 
+  const handleSubmit = () => {
+    console.log('submit func!')
+    return currentGameInfo.currentRow++, currentGameInfo.currentTile = 0
+  }
+
   const handleClick = (tile) => {
     const {
-      key,
-      match
+      key
     } = tile
 
     if (key == 'DEL') return handleDelete(currentGameInfo);
-    if (key == 'ENTER' && currentTile == 5) {
-      return console.log('submit')
+    if (key == 'ENTER' && currentGameInfo.currentTile == 5) {
+      return handleSubmit()
     } else if (key == 'ENTER') return;
+    if(currentGameInfo.currentTile == 5) return;
 
     updateGameboard(tile, currentGameInfo)
     updateCurrentGameInfo()
-    console.log(gameboardRows)
   };
 
   return (
