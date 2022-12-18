@@ -40,6 +40,7 @@
   background: #ffffff;
   width: 60px;
   min-height: 60px;
+  transition: 1s;
   animation: letter 0.5s ease-in-out;
 }
 
