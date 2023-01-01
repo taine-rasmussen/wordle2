@@ -27,8 +27,8 @@ const Keyboard = (props) => {
   } = useGameInfo(gameboardRows)
 
   const handleDelete = () => {
-    handleBackSpace()
-    handleGameBoardBackspace()
+    handleBackSpace();
+    handleGameBoardBackspace(currentGameInfo);
   }
 
   const handleSubmit = (submittedRow) => {
